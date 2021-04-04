@@ -2827,6 +2827,9 @@ static int zram_add(void)
 #ifdef CONFIG_ZRAM_WRITEBACK
 	spin_lock_init(&zram->wb_limit_lock);
 #endif
+#ifdef CONFIG_ZRAM_DEDUP
+	zram->use_dedup = true;
+#endif
 #ifdef CONFIG_ZRAM_LRU_WRITEBACK
 	INIT_LIST_HEAD(&zram->list);
 	spin_lock_init(&zram->list_lock);

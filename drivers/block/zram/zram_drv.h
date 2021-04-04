@@ -52,6 +52,7 @@ enum zram_pageflags {
 	ZRAM_UNDER_WB,	/* page is under writeback */
 	ZRAM_HUGE,	/* Incompressible page */
 	ZRAM_IDLE,	/* not accessed page since last idle marking */
+	ZRAM_DEDUPED,	/* Deduplicated with existing entry */
 #ifdef CONFIG_ZRAM_LRU_WRITEBACK
 	ZRAM_EXPIRE,
 	ZRAM_READ_BDEV,

@@ -2798,7 +2798,7 @@ static struct binder_node *binder_get_node_refs_for_txn(
 	return target_node;
 }
 #ifdef CONFIG_SAMSUNG_FREECESS
-// 1) Skip first 8 bytes (useless data)
+// 1) Skip first 8(P)/12(Q) bytes (useless data)
 // 2) Make sure that the invalid address issue is not occuring (j=9, j+=2)
 // 3) Java layer uses 2 bytes char. And only the first byte has the data. (p+=2)
 // 4) Parcel::writeInterfaceToken() in frameworks/native/libs/binder/Parcel.cpp
@@ -2817,11 +2817,13 @@ static void freecess_async_binder_report(struct binder_proc *proc,
 	if (!proc || !target_proc || !tr || !t)
 		return;
 
-    // for android P verson, skip 8 bytes; for Q version, skip 12 bytes;
+	// for android P/Q/R verson, skip 8/12/16 bytes;
 	if (freecess_fw_version == 0)
 		skip_bytes = 8;
 	else if (freecess_fw_version == 1)
 		skip_bytes = 12;
+	else if (freecess_fw_version == 2)
+		skip_bytes = 16;
 
 	if ((tr->flags & TF_ONE_WAY) && target_proc
 		&& target_proc->tsk && target_proc->tsk->cred
@@ -2830,7 +2832,7 @@ static void freecess_async_binder_report(struct binder_proc *proc,
 		if (thread_group_is_frozen(target_proc->tsk)) {
 			if (t->buffer->data_size > skip_bytes) {
 				if (0 == copy_from_user(buf_user, (const void __user *)(uintptr_t)tr->data.ptr.buffer,
-					min_t(binder_size_t, tr->data_size, INTERFACETOKEN_BUFF_SIZE - 1))) {
+					min_t(binder_size_t, tr->data_size, INTERFACETOKEN_BUFF_SIZE - 2))) {
 					p = &buf_user[skip_bytes];
 					i = 0;
 					j = skip_bytes + 1;

@@ -10,7 +10,7 @@ on:
 jobs:
   oneui:
     name: Build One UI
-    runs-on: opensuse_desk
+    runs-on: self-hosted
 
     strategy:
       fail-fast: true
@@ -70,7 +70,7 @@ jobs:
 
   aosp:
     name: Build Lineage/AOSP 11
-    runs-on: opensuse_desk
+    runs-on: self-hosted
 
     strategy:
       fail-fast: true
@@ -123,7 +123,7 @@ jobs:
 
   snowcone:
     name: Build Lineage/AOSP 12
-    runs-on: opensuse_desk
+    runs-on: self-hosted
 
     strategy:
       fail-fast: true
@@ -176,7 +176,7 @@ jobs:
 
   aosp_permissive:
     name: Build Lineage/AOSP 11 - Permissive
-    runs-on: opensuse_desk
+    runs-on: self-hosted
 
     strategy:
       fail-fast: true
@@ -229,7 +229,7 @@ jobs:
 
   snowcone_permissive:
     name: Build Lineage/AOSP 12 - Permissive
-    runs-on: opensuse_desk
+    runs-on: self-hosted
 
     strategy:
       fail-fast: true
@@ -284,7 +284,7 @@ jobs:
     name: Release files and configs
     if: always()
     needs: [oneui, aosp, aosp_permissive, snowcone, snowcone_permissive]
-    runs-on: opensuse_desk
+    runs-on: self-hosted
     strategy:
       fail-fast: true
     steps:

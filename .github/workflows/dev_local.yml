@@ -1,4 +1,4 @@
-name: Development Build (Galaxy A50)
+name: Development Build Opensuse (Galaxy A50)
 
 on:
   push:
@@ -28,8 +28,8 @@ jobs:
       run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
       id: branch_name
 
-    - name: Install Debian/Ubuntu dependencies
-      run: sudo apt-get install bzip2 lib32stdc++6 libc6-dev-i386 libncurses5 -y
+    #- name: Install Debian/Ubuntu dependencies
+    #  run: sudo apt-get install bzip2 lib32stdc++6 libc6-dev-i386 libncurses5 -y
 
     - name: Build Mint kernel
       run: |
@@ -88,8 +88,8 @@ jobs:
       run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
       id: branch_name
 
-    - name: Install Debian/Ubuntu dependencies
-      run: sudo apt-get install bzip2 lib32stdc++6 libc6-dev-i386 libncurses5 -y
+   # - name: Install Debian/Ubuntu dependencies
+   #   run: sudo apt-get install bzip2 lib32stdc++6 libc6-dev-i386 libncurses5 -y
 
     - name: Build Mint kernel
       run: |
@@ -141,8 +141,8 @@ jobs:
       run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
       id: branch_name
 
-    - name: Install Debian/Ubuntu dependencies
-      run: sudo apt-get install bzip2 lib32stdc++6 libc6-dev-i386 libncurses5 -y
+   # - name: Install Debian/Ubuntu dependencies
+   #   run: sudo apt-get install bzip2 lib32stdc++6 libc6-dev-i386 libncurses5 -y
 
     - name: Build Mint kernel
       run: |
@@ -194,8 +194,8 @@ jobs:
       run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
       id: branch_name
 
-    - name: Install Debian/Ubuntu dependencies
-      run: sudo apt-get install bzip2 lib32stdc++6 libc6-dev-i386 libncurses5 -y
+   # - name: Install Debian/Ubuntu dependencies
+   #   run: sudo apt-get install bzip2 lib32stdc++6 libc6-dev-i386 libncurses5 -y
 
     - name: Build Mint kernel
       run: |
@@ -247,8 +247,8 @@ jobs:
       run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
       id: branch_name
 
-    - name: Install Debian/Ubuntu dependencies
-      run: sudo apt-get install bzip2 lib32stdc++6 libc6-dev-i386 libncurses5 -y
+    #- name: Install Debian/Ubuntu dependencies
+    #  run: sudo apt-get install bzip2 lib32stdc++6 libc6-dev-i386 libncurses5 -y
 
     - name: Build Mint kernel
       run: |

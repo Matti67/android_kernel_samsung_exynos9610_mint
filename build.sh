@@ -37,6 +37,10 @@ if [[ ${CURRENT_BUILD_USER} == "tenseventy7" ]]; then
 	export KBUILD_BUILD_USER=TenSeventy7
 	export KBUILD_BUILD_HOST=Lumiose-Build
 fi
+if [[ ${CURRENT_BUILD_USER} == "max" ]]; then
+        export KBUILD_BUILD_USER=max
+        export KBUILD_BUILD_HOST=max@localhost
+fi
 
 # Toolchain options
 BUILD_PREF_COMPILER='clang'

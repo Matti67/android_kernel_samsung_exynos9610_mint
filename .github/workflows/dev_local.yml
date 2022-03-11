@@ -177,7 +177,7 @@ jobs:
   release:
     name: Release files and configs
     if: always()
-    needs: [oneui, aosp, aosp_permissive, snowcone, snowcone_permissive]
+    needs: [oneui, snowcone, snowcone_permissive]
     runs-on: self-hosted
     strategy:
       fail-fast: true

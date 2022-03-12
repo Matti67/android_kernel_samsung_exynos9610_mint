@@ -3361,7 +3361,7 @@
 		gpu_pmqos_mif_max_clock = <2093000>;
 		gpu_pmqos_mif_max_clock_base = <546000>;
 		gpu_cl_dvfs_start_base = <546000>;
-		gpu_debug_level = <3>; /*DEBUG(1) INFO(2) WARNING(3) ERROR(4)*/
+		gpu_debug_level = <4>; /*DEBUG(1) INFO(2) WARNING(3) ERROR(4)*/
 		gpu_trace_level = <8>; /*TRACE_ALL*/
 		gpu_bts_support = <1>;
 		gpu_mo_min_clock = <764000>;

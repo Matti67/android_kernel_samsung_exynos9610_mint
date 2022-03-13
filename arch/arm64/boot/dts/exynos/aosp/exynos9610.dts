@@ -371,13 +371,13 @@
 			frt {
 				/* little cores */
 				coregroup0 {
-					coverage-ratio = <67>;
-					active-ratio = <100>;
+					coverage-ratio = <30>;
+					active-ratio = <25>;
 				};
 				/* big cores */
 				coregroup1 {
 					coverage-ratio = <15>;
-					active-ratio = <100>;
+					active-ratio = <5>;
 				};
 			};
 
@@ -3386,6 +3386,28 @@
 			enabled = <1>;          /* Enabled */
 			expired_time = <80>;    /* 80ms */
 			qos_min_class = <5>;
+		};
+	};
+
+	schedutil {
+		domain@0 {
+			device_type = "freqvar-tune";
+			shared-cpus = "0-3";
+
+			boost_table = < 20 910000 15 1222000 10 1326000 5 1534000 0 >;
+			up_rate_limit_table = < 5 >;
+			down_rate_limit_table = < 3 >;
+			upscale_ratio_table = < 60 910000 70 1326000 80 >;
+		};
+
+		domain@1 {
+			device_type = "freqvar-tune";
+			shared-cpus = "4-7";
+
+			boost_table = < 20 1144000 15 1664000 10 1976000 5 2184000 0 >;
+			up_rate_limit_table = < 4 >;
+			down_rate_limit_table = < 2 >;
+			upscale_ratio_table = < 60 1144000 70 1456000 80 >;
 		};
 	};
 

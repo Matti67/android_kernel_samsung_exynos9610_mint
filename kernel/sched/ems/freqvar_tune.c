@@ -369,9 +369,8 @@ static void freqvar_rate_limit_update(int cpu, int new_freq)
 	if (!policy)
 		return;
 
-#if 0
 	sugov_update_rate_limit_us(policy, up_rate_limit, down_rate_limit);
-#endif
+
 	cpufreq_cpu_put(policy);
 }
 

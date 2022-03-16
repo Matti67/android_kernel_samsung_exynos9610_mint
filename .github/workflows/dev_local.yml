@@ -196,22 +196,10 @@ jobs:
         name: oneui_beta-${{ github.run_number }}
         path: release
       
-    - name: Merge Lineage/AOSP 11 release
-      uses: actions/download-artifact@v2
-      with:
-        name: aosp_beta-${{ github.run_number }}
-        path: release
-
     - name: Merge Lineage/AOSP 12 release
       uses: actions/download-artifact@v2
       with:
         name: snowcone_beta-${{ github.run_number }}
-        path: release
-
-    - name: Merge Lineage/AOSP (permissive) release
-      uses: actions/download-artifact@v2
-      with:
-        name: aosp-permissive_beta-${{ github.run_number }}
         path: release
       
     - name: Merge Lineage/AOSP 12 (permissive) release

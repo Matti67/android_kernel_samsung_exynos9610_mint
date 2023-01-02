@@ -9,7 +9,7 @@ on:
 
 jobs:  
   name: Build AOSP 12 (Enforcing)
-    if: ${{ !contains(github.event.head_commit.message, '[skip rel]') }}
+      if: ${{ !contains(github.event.head_commit.message, '[skip rel]') }}
     runs-on: self-hosted
 
     strategy:
@@ -73,7 +73,7 @@ jobs:
 
   aosp-s-p:
     name: Build AOSP 12 (Permissive)
-    if: ${{ !contains(github.event.head_commit.message, '[skip rel]') }}
+      if: ${{ !contains(github.event.head_commit.message, '[skip rel]') }}
     runs-on: self-hosted
 
     strategy:

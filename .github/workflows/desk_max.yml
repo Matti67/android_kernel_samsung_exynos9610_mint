@@ -175,8 +175,10 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         # The name of the tag
+        replacesArtifacts: false
         tag_name: xbeta-${{ github.run_number }}_a50dx
         prerelease: true
         release_name: Galaxy A50 (beta-${{ github.run_number }})
+        allowUpdates: true
         body_path: "./tools/make/release/a50-development.md"
         asset_files: './release'

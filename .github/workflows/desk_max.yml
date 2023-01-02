@@ -7,7 +7,7 @@ on:
       - 'main'
       - 'wip-*'
 
-jobs:  
+jobs:
   name: Build AOSP 12 (Enforcing)
     #if: ${{ !contains(github.event.head_commit.message, '[skip rel]') }}
     runs-on: self-hosted

@@ -436,28 +436,28 @@ jobs:
         timezoneMacos: "Europe/Rome"
         timezoneWindows: "Italy Standard Time"
 
-    - name: Merge One UI Release
+    - name: Merge Lineage/AOSP 12 ksu enforcing Release
       uses: actions/download-artifact@v2
       with:
-        name: oneui_beta-${{ github.run_number }}
+        name: aosp-s-k-e-${{ github.run_number }}
         path: release
       
-    - name: Merge Lineage/AOSP 11 release
+    - name: Merge Lineage/AOSP 12 ksu permissive release
       uses: actions/download-artifact@v2
       with:
-        name: aosp_beta-${{ github.run_number }}
+        name: aosp-s-k-p-${{ github.run_number }}
         path: release
 
-    - name: Merge Lineage/AOSP 12 release
+    - name: Merge Lineage/AOSP 12 (permissive) release
       uses: actions/download-artifact@v2
       with:
-        name: snowcone_beta-${{ github.run_number }}
+        name: aosp-s-p-${{ github.run_number }}
         path: release
 
-    - name: Merge Lineage/AOSP (permissive) release
+    - name: Merge Lineage/AOSP 12 (enforcing) release
       uses: actions/download-artifact@v2
       with:
-        name: aosp-permissive_beta-${{ github.run_number }}
+        name: aosp-s-e-${{ github.run_number }}
         path: release
       
     - name: Merge Lineage/AOSP 12 (permissive) release
